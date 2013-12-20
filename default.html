@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>County Economies</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+	
+	<link href='http://fonts.googleapis.com/css?family=Bevan|Cardo' rel='stylesheet' type='text/css'>
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-44457538-2', 'uscounties.org');
+	  ga('send', 'pageview');
+	
+	</script>
+  </head>
+<body>
+<div id="main-wrapper">
+    <div id="content">
+        <div style="text-align:right"><a href="http://www.nickLyell.com"><img src="img/iss.png" title="Nick Lyell" width="50" height="50" / ></a></div>
+        <h1>County Economies Like Me</h1>
+        <p>County Economies endured a tough recession and a slow recovery, but this story varied across the country. Select a category below to compare, or roll over to the graph to highlight counies. <a href="http://www.naco.org/countyTracker">Read more...</a></p>
+        
+        <div id="filters">
+            <a id="NE">North East</a>
+            <a id="S">South</a>
+            <a id="MW">Mid-West</a>
+            <a id="W">West</a>
+        </div><!-- @end #filters -->
+
+        <div id="blurb">
+            <div id="default-blurb">
+                <h2>3,069 Counties</h2>
+                <p>The average county economy saw GDP recovered to XXX% of it's peak value by 2013.</p>
+            </div>
+            <div id="blurb-content"></div>
+        </div>
+
+        <div id="vis"></div>
+        <div id="cite">Source: NACo Analysis of Moody's Analytics Data; Graphic by: <a href="http://www.nickLyell.com">Nick Lyell</a></div>
+        
+    </div><!-- @end content -->
+</div><!-- @end #main-wrapper -->
+
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#filters a').click(function() {
+        var countryId = $(this).attr("id");
+        $(this).toggleClass(countryId);
+        showRegion(countryId);
+    });
+    
+});
+</script>
+</body>
+</html>
