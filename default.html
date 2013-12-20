@@ -30,7 +30,7 @@
 <div id="main-wrapper">
     <div id="content">
         <div style="text-align:right"><a href="http://www.nickLyell.com"><img src="img/iss.png" title="Nick Lyell" width="50" height="50" / ></a></div>
-        <h1>County Economies Like Me</h1>
+        <h1>County Economies Like Mine</h1>
         <p>County Economies endured a tough recession and a slow recovery, but this story varied across the country. Select a category below to compare, or roll over to the graph to highlight counies. <a href="http://www.naco.org/countyTracker">Read more...</a></p>
         
         <div id="filters">
@@ -55,15 +55,15 @@
 </div><!-- @end #main-wrapper -->
 
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
+<script src="js/plugins.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
     $('#filters a').click(function() {
-        var countryId = $(this).attr("id");
-        $(this).toggleClass(countryId);
-        showRegion(countryId);
+        var countyId = $(this).attr("id");
+        $(this).toggleClass(countyId);
+        showRegion(countyId);
     });
     
 });
