@@ -23,6 +23,7 @@ var line = d3.svg.line()
     .y(function(d) { return y(d.y); });
 					
 
+//Should update all this antiquated csv parsing with new D3 API
 // Regions
 var counties_regions = {};
 d3.text('data/county-cross.csv', 'text/csv', function(text) {
@@ -40,7 +41,8 @@ d3.text('data/RGDP-counties.csv', 'text/csv', function(text) {
     for (i=1; i < counties.length; i++) {
         var values = counties[i].slice(2, counties[i.length-1]);
         var currData = [];
-        //countyFips[counties[i][1]] = counties[i][0];
+        //What does this do??? (below)
+        countyFips[counties[i][1]] = counties[i][0];
         
         var started = false;
         for (j=0; j < values.length; j++) {
