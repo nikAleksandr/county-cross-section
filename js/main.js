@@ -22,8 +22,32 @@ var line = d3.svg.line()
     .x(function(d,i) { return x(d.x); })
     .y(function(d) { return y(d.y); });
 					
+var counties_regions = {};
+
+var counties = d3.csv.parse("data/RGDP-counties.csv", function(d) {
+	return {
+		countyId: +d.id,
+		name: geography,
+		countySize: +countySize,
+		stateFips: +stateFips,
+		countyFips: +countyFips,
+		counties_regions: censusRegion,
+		metroMicro: +metroMicro,
+		topGDPSector: topGDPSector,
+		topEMPSector: topEMPSector,
+		RGDP90: +1990,
+		RGDP91: +1991,
+		
+		
+		
+		
+	}; 
+}, function(error, rows) { 
+	console.log(rows); 
+});
 
 //Should update all this antiquated csv parsing with new D3 API
+/*
 // Regions
 var counties_regions = {};
 d3.text('data/county-cross.csv', 'text/csv', function(text) {
@@ -68,6 +92,8 @@ d3.text('data/RGDP-counties.csv', 'text/csv', function(text) {
             .on("mouseout", onmouseout);
     }
 });  
+
+*/
     
 vis.append("svg:line")
     .attr("x1", x(1990))
